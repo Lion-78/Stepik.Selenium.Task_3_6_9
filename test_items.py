@@ -1,7 +1,8 @@
-# -*- coding: utf-8 -*-
-link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+import time
+link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
-def test_guest_should_see_login_link_pass(browser):
+def test_check_button_basket(browser):
     browser.get(link)
-    browser.find_element_by_class_name("btn-add-to-basket")
-    
+    btn = browser.find_element_by_class_name("btn-add-to-basket")
+    time.sleep(15)
+    assert btn, "Явно лишний assert"
